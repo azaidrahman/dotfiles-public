@@ -121,8 +121,12 @@ map('n', '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' })
 --   LazyVim.news.changelog()
 -- end, { desc = 'LazyVim Changelog' })
 
+-- Alpha (Starting Page)
 map('n', '<leader>al', '<cmd>Alpha<cr>', { desc = 'Alpha' }) -- invoke alpha
 
+-- Neogit
+map('n', '<leader>gg', ':Neogit<CR>', { desc = 'Neogit' })
+--
 -- toggle options
 -- LazyVim.toggle.map("<leader>uf", LazyVim.toggle.format())
 -- LazyVim.toggle.map("<leader>uF", LazyVim.toggle.format(true))
