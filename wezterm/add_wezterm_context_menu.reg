@@ -1,0 +1,13 @@
+Windows Registry Editor Version 5.00
+
+; Remove old entries
+; [-HKEY_CLASSES_ROOT\Directory\Background\shell\WezTerm]
+[-HKEY_CLASSES_ROOT\Directory\Background\shell\Open WezTerm Here]
+
+; ; Add new entry
+; [HKEY_CLASSES_ROOT\Directory\Background\shell\OpenWezTermHere]
+; @="Open WezTerm Here"
+; "Icon"="C:\\Program Files\\WezTerm\\wezterm-gui.exe"
+;
+; [HKEY_CLASSES_ROOT\Directory\Background\shell\OpenWezTermHere\command]
+; @="C:\\Program Files\\WezTerm\\wezterm-gui.exe start --cwd ."
