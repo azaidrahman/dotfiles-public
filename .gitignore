@@ -8,3 +8,4 @@ mpv.net/subtitles
 mpv.net/history.txt
 wezterm/backdrops
 nvim/lazy-lock.json
+*.json
