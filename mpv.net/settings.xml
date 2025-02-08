@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <InputDefaultBindingsFixApplied>true</InputDefaultBindingsFixApplied>
+    <ShowMenuFixApplied>true</ShowMenuFixApplied>
+    <MenuUpdateVersion>1</MenuUpdateVersion>
+    <Volume>70</Volume>
+    <RecentFiles>
+        <string>https://www.youtube.com/watch?v=2LEnBXH8xV0|🎨 Make WSL/Ubuntu Terminal Look Better | Oh My Posh Guide</string>
+        <string>https://www.youtube.com/watch?v=RTv7G79YYPU&amp;t=396s|Using Windows Subsystem for Linux v2</string>
+        <string>https://www.youtube.com/watch?v=ld-vmpbngDE|FancyZones in 5 Minutes (Beginner's Guide) | PowerToys Window Manager</string>
+        <string>https://www.youtube.com/watch?v=-N7pJCW9osU|Wirtual Plays INTENSE FullSpeed CUP OF THE DAY!</string>
+        <string>https://www.youtube.com/watch?v=zOnwgxiC0OA|Git MERGE vs REBASE: The Definitive Guide</string>
+    </RecentFiles>
+    <WindowLocation>
+        <X>0</X>
+        <Y>0</Y>
+    </WindowLocation>
+    <WindowPosition>
+        <X>-961</X>
+        <Y>542</Y>
+    </WindowPosition>
+    <WindowSize>
+        <Width>1160</Width>
+        <Height>652</Height>
+    </WindowSize>
+    <AudioDevice />
+    <ConfigEditorSearch>General:</ConfigEditorSearch>
+    <Mute>no</Mute>
+    <StartupFolder />
+</AppSettings>
