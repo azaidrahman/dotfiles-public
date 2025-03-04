@@ -2,10 +2,13 @@
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-; alt - ! 
-; win - # 
-; shift - +
-; ctrl - ^
+; === SYMBOLS ===
+; !   <- Alt
+; +   <- Shift
+; ^   <- Ctrl
+; #   <- Win
+
+
 
 ; Morgen
 ; Ctrl+Shift+/
@@ -40,7 +43,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 return
 ; OBSIDIAN
 ; Ctrl+`
-^`::
+^+`::
 	windowHandleId := WinExist("ahk_exe Obsidian.exe")
 	windowExistsAlready := windowHandleId > 0
 
@@ -71,24 +74,6 @@ return
 	Run "C:\Users\azaid\AppData\Local\Programs\obsidian\Obsidian.exe"
 	}
 return
-
-; OBSIDIAN
-; Ctrl-Alt-V
-; ^`::
-; if WinExist("ahk_exe Obsidian.exe")
-; {
-;     WinActivate, ahk_exe Obsidian.exe
-;     Sleep, 500 ; wait 0.5 seconds
-;     Send, ^o ; send ctrl-o to add a quick note to today's note
-; }
-; else
-; {
-;     Run, C:/Users/azaid/AppData/Local/Programs/obsidian/obsidian.exe
-;     Sleep, 1500 ; wait 4.5 seconds for Obsidian to launch
-;     Send, ^o ; send ctrl-alt-c to add a quick note to today's note
-; }
-; return
-; 
 
 
 
@@ -134,7 +119,7 @@ return
     {
         currentDeviceIndex := 1
     }
-    
+
     ; Switch to the next device by index
     Run, "C:\Users\azaid\Documents\Tools\Audio End Point Controller\Release\EndPointController.exe" %currentDeviceIndex%, , UseErrorLevel
     if ErrorLevel
@@ -195,37 +180,38 @@ Capslock::
     }
 return
 
+; Hotkey: Ctrl+Alt+T
+;~ !t::
+    ; Check if Task Manager is already running
+    ;~ Process, Exist, Taskmgr.exe
+    ;~ if ErrorLevel
+    ;~ {
+        ;~ ; If running, activate the window
+		;~ Process, Close, Taskmgr.exe
+		;~ MsgBox, Here
+		;~ Run, Taskmgr.exe
+        ;~ WinActivate, ahk_exe Taskmgr.exe
+		;~ WinRestore, ahk_exe Taskmgr.exe
+    ;~ }
+    ;~ else
+    ;~ {
+        ;~ ; If not running, execute the VBS script
+        ;~ Run, C:\Users\azaid\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\task_manager.vbs
+        ;~ ; Wait for Task Manager to start
+        ;~ WinWait, Task Manager,, 5
+        ;~ if ErrorLevel
+        ;~ {
+            ;~ MsgBox, Task Manager failed to start
+        ;~ }
+        ;~ else
+        ;~ {
+            ;~ WinActivate
+        ;~ }
+    ;~ }
+;~ return
+
 ; --------------------||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||--------------------
 
-; Adobe navigation
-
-scrollAmount := 20
-#IfWinActive ahk_class AcrobatSDIWindow
-h::Send {Left}
-Return
-
-#IfWinActive ahk_class AcrobatSDIWindow
-j::Send {Down}
-Return
-
-#IfWinActive ahk_class AcrobatSDIWindow
-k::Send {Up}
-Return
-
-#IfWinActive ahk_class AcrobatSDIWindow
-l::Send {Right}
-Return
-
-#IfWinActive ahk_class AcrobatSDIWindow
-!j::Send {WheelDown %scrollAmount%}
-Return
-
-#IfWinActive ahk_class AcrobatSDIWindow
-!k::Send {WheelUp %scrollAmount%}
-Return
-
-
-; --------------------||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||--------------------
 
 
 
@@ -237,7 +223,6 @@ return
 ^k::Send {Up}
 return
 
-
 #IfWinActive ahk_exe Obsidian.exe
 ^j::Send {Down}
 return
@@ -247,11 +232,4 @@ return
 return
 
 
-#IfWinActive ahk_exe Morgen.exe
-^WheelUp::Send {Right}
-return
-
-#IfWinActive ahk_exe Morgen.exe
-^WheelDown::Send {Left}
-return
 
