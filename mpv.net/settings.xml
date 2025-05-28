@@ -3,8 +3,9 @@
     <InputDefaultBindingsFixApplied>true</InputDefaultBindingsFixApplied>
     <ShowMenuFixApplied>true</ShowMenuFixApplied>
     <MenuUpdateVersion>1</MenuUpdateVersion>
-    <Volume>90</Volume>
+    <Volume>100</Volume>
     <RecentFiles>
+        <string>https://www.youtube.com/watch?v=FGVY7gbaoQI|The Ultimate Neovim Setup Guide From Scratch</string>
         <string>https://www.youtube.com/watch?v=AMdG7IjgSPM|Python Tutorial: UV - A Faster, All-in-One Package Manager to Replace Pip and Venv</string>
         <string>https://www.youtube.com/watch?app=desktop&amp;v=X_ZTGb8ZyL8|Scaling Images &amp; Adding Spaces in Visio for Desktop</string>
         <string>C:\Users\azaid\Documents\ShareX\Screenshots\2025-05\stremio_R31D2Oto2b.mp4</string>
@@ -19,19 +20,18 @@
         <string>https://www.youtube.com/watch?v=HOYy_jmzUSg|The Great Tesla Debate | Lemonade Stand 🍋</string>
         <string>https://www.youtube.com/watch?v=qX8KBFL0jjI|Enable Wake on LAN | Quick Windows Guide + Fixes!</string>
         <string>https://www.youtube.com/watch?v=gsKuETFJr54|DE Zoomcamp 4.1.2 - What is dbt?</string>
-        <string>https://www.youtube.com/watch?v=uF76d5EmdtU|DE Zoomcamp 4.1.1 - Analytics Engineering Basics</string>
     </RecentFiles>
     <WindowLocation>
-        <X>-1</X>
+        <X>0</X>
         <Y>0</Y>
     </WindowLocation>
     <WindowPosition>
-        <X>-189</X>
-        <Y>566</Y>
+        <X>960</X>
+        <Y>559</Y>
     </WindowPosition>
     <WindowSize>
-        <Width>1125</Width>
-        <Height>633</Height>
+        <Width>1910</Width>
+        <Height>1008</Height>
     </WindowSize>
     <AudioDevice />
     <ConfigEditorSearch>Subtitle:</ConfigEditorSearch>

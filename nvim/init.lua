@@ -1,4 +1,4 @@
-require("sethy.core")
-require("sethy.lazy")
+require("zaid.core")
+require("zaid.lazy")
 require("current-theme")
-require("sethy.terminalpop")
+require("zaid.terminalpop")
