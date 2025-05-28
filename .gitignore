@@ -13,3 +13,4 @@ nvim/lazy-lock.json
 *.bak.*
 *.bak
 AutoHotKey/mouse-control.autohotkey
+yasb/yasb.log
