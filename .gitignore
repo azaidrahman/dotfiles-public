@@ -9,3 +9,7 @@ mpv.net/history.txt
 wezterm/backdrops
 nvim/lazy-lock.json
 *.json
+*-archive.*/
+*.bak.*
+*.bak
+AutoHotKey/mouse-control.autohotkey

@@ -4,7 +4,7 @@
 #Write-Output "Start"
 #Import-Module -Name Terminal-Icons
 # Post-Git
-#Import-Module -Name posh-git
+Import-Module -Name posh-git
 # Tab Predictor
 Import-Module -Name PSReadLine
 #Import-Module -Name CompletionPredictor 
@@ -44,8 +44,7 @@ Set-PSReadLineOption -PredictionViewStyle ListView
 #Set-PsFzfOption -EnableAliasFuzzySetEverything
 
 
-Set-PSReadLineKeyHandler -Key Ctrl+k -Function HistorySearchBackward
-Set-PSReadLineKeyHandler -Key Ctrl+j -Function HistorySearchForward
+Set-PSReadLineKeyHandler -Key Ctrl+p -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key Ctrl+n -Function HistorySearchForward
 #}
-
 

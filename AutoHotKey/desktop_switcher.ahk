@@ -1,7 +1,7 @@
 #Requires AutoHotkey v1.1.33+
 #SingleInstance Force ; The script will Reload if launched while already running
 #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases
-#KeyHistory 0 ; Ensures user privacy when debugging is not needed
+;~ #KeyHistory 0 ; Ensures user privacy when debugging is not needed
 SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory
 SendMode Input ; Recommended for new scripts due to its superior speed and reliability
 
@@ -209,10 +209,40 @@ getForemostWindowIdOnDesktop(n)
     }
 }
 
+;~ MoveCurrentWindowToDesktop(desktopNumber) {
+    ;~ WinGet, activeHwnd, ID, A
+    ;~ DllCall(MoveWindowToDesktopNumberProc, UInt, activeHwnd, UInt, desktopNumber - 1)
+    ;~ switchDesktopByNumber(desktopNumber)
+;~ }
+
 MoveCurrentWindowToDesktop(desktopNumber) {
+
+    global CurrentDesktop, DesktopCount
+    ; Validate input and check if desktop needs to be created
+    if (desktopNumber < 1) {
+        OutputDebug, [MoveCurrentWindowToDesktop] Invalid desktop number: %desktopNumber%
+        return
+    }
     WinGet, activeHwnd, ID, A
-    DllCall(MoveWindowToDesktopNumberProc, UInt, activeHwnd, UInt, desktopNumber - 1)
-    switchDesktopByNumber(desktopNumber)
+    ; Create new desktops until we reach the target number'
+    if (desktopNumber > DesktopCount) {
+        OutputDebug, [MoveCurrentWindowToDesktop] Creating new desktop (current count: %DesktopCount%)
+        createVirtualDesktop()
+        ;~ updateGlobalVariables() ; Refresh count after creation
+        ; Perform the window move to the newly created desktop
+        ;~ desktopNumber := DesktopCount
+        ;~ MsgBox, current desktop count: %DesktopCount%
+        ;~ MsgBox, current desktop number: %desktopNumber%
+        DllCall(MoveWindowToDesktopNumberProc, UInt, activeHwnd, UInt, DesktopCount - 1)
+        switchDesktopByNumber(desktopNumber)
+
+    } else {
+        ; Perform the window move like normal
+        DllCall(MoveWindowToDesktopNumberProc, UInt, activeHwnd, UInt, desktopNumber - 1)
+        switchDesktopByNumber(desktopNumber)
+    }
+
+
 }
 
 MoveCurrentWindowToRightDesktop()

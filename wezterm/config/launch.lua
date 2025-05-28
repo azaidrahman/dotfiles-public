@@ -7,15 +7,16 @@ local options = {
 
 if platform.is_win then
 	options.default_prog = { "pwsh", "-NoLogo" }
+	-- options.default_cwd = "F:\\"
 	options.launch_menu = {
 		{ label = "PowerShell Core", args = { "pwsh", "-NoLogo" } },
 		{ label = "PowerShell Desktop", args = { "powershell" } },
 		{ label = "Command Prompt", args = { "cmd" } },
-		{ label = "Nushell", args = { "nu" } },
-		{
-			label = "Git Bash",
-			args = { "C:\\Users\\kevin\\scoop\\apps\\git\\current\\bin\\bash.exe" },
-		},
+		-- { label = "Nushell", args = { "nu" } },
+		-- {
+		-- 	label = "Git Bash",
+		-- 	args = { "C:\\Users\\kevin\\scoop\\apps\\git\\current\\bin\\bash.exe" },
+		-- },
 	}
 elseif platform.is_mac then
 	options.default_prog = { "/opt/homebrew/bin/fish", "-l" }

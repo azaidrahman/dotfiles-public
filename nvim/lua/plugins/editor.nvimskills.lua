@@ -3,6 +3,8 @@ return {
     "m4xshen/hardtime.nvim",
     event = "VeryLazy",
     opts = {
+      disable_mouse = false,
+
       disabled_filetypes = { "aerial-nav", "qf", "netrw", "NvimTree", "lazy", "mason", "neo-tree" },
       max_time = 5000,
       max_count = 10,

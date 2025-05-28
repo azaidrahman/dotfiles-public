@@ -4,8 +4,8 @@ local colors = require("colors.custom")
 local mux = wezterm.mux
 
 return {
-	animation_fps = 240,
-	max_fps = 240,
+	animation_fps = 144,
+	max_fps = 144,
 	front_end = "WebGpu",
 	webgpu_power_preference = "HighPerformance",
 	webgpu_preferred_adapter = gpu_adapters:pick_best(),
@@ -45,6 +45,7 @@ return {
 		top = 12,
 		bottom = 7,
 	},
+	window_decorations = "RESIZE",
 	-- window_close_confirmation = "NeverPrompt",
 	window_frame = {
 		active_titlebar_bg = "#090909",
@@ -57,6 +58,6 @@ return {
 	},
 	wezterm.on("gui-startup", function()
 		local tab, pane, window = mux.spawn_window({})
-		window:gui_window():maximize()
+		-- window:gui_window():maximize()
 	end),
 }
