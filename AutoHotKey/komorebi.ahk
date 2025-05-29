@@ -63,7 +63,7 @@ Komorebic(cmd) {
 !m::Komorebic("toggle-monocle")
 
 ; Window manager options
-!0::Komorebic("retile")
+!r::Komorebic("retile")
 !+p::Komorebic("toggle-pause")
 
 ; Layouts
@@ -85,6 +85,7 @@ Komorebic(cmd) {
 !7::Komorebic("focus-workspace 6")
 !8::Komorebic("focus-workspace 7")
 !9::Komorebic("focus-workspace 8")
+!0::Komorebic("focus-workspace 9")
 
 
 
@@ -98,6 +99,7 @@ Komorebic(cmd) {
 !+7::Komorebic("move-to-workspace 6")
 !+8::Komorebic("move-to-workspace 7")
 !+9::Komorebic("move-to-workspace 8")
+!+0::Komorebic("move-to-workspace 9")
 
 
 RunWait("pwsh -NoProfile -Command if ((Get-Process -Name 'yasb' -ErrorAction SilentlyContinue) -eq $null) { } else { yasbc stop }", , "Hide")
