@@ -16,3 +16,6 @@ AutoHotKey/mouse-control.autohotkey
 yasb/yasb.log
 *.yaml
 mpv.net/mpvHistory.log
+Modules
+conda/
+whkdrc
