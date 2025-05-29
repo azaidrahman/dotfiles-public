@@ -3,9 +3,12 @@
     <InputDefaultBindingsFixApplied>true</InputDefaultBindingsFixApplied>
     <ShowMenuFixApplied>true</ShowMenuFixApplied>
     <MenuUpdateVersion>1</MenuUpdateVersion>
-    <Volume>100</Volume>
+    <Volume>130</Volume>
     <RecentFiles>
-        <string>https://www.youtube.com/watch?v=FGVY7gbaoQI|The Ultimate Neovim Setup Guide From Scratch</string>
+        <string>K:\Torrents\VueSchool-Vue.jsMasterClass2024Edition2024-12\VueSchool-Vue.jsMasterClass2024Edition2024-12\1. Project Structure and Routing\14.Set Up Auto Routes in Vue Router with TypeScript Support.mp4</string>
+        <string>K:\Torrents\VueSchool-Vue.jsMasterClass2024Edition2024-12\VueSchool-Vue.jsMasterClass2024Edition2024-12\1. Project Structure and Routing\13.Catch All Undefined Routes and Create 404 Not Found Page in Vue Router.mp4</string>
+        <string>K:\Torrents\VueSchool-Vue.jsMasterClass2024Edition2024-12\VueSchool-Vue.jsMasterClass2024Edition2024-12\1. Project Structure and Routing\12.Create Dynamic Routes with Wildcards in Vue Router.mp4</string>
+        <string>K:\Torrents\VueSchool-Vue.jsMasterClass2024Edition2024-12\VueSchool-Vue.jsMasterClass2024Edition2024-12\1. Project Structure and Routing\11.Lazy Load Routes with Vite�s Dynamic Imports in Vue Router.mp4</string>
         <string>https://www.youtube.com/watch?v=AMdG7IjgSPM|Python Tutorial: UV - A Faster, All-in-One Package Manager to Replace Pip and Venv</string>
         <string>https://www.youtube.com/watch?app=desktop&amp;v=X_ZTGb8ZyL8|Scaling Images &amp; Adding Spaces in Visio for Desktop</string>
         <string>C:\Users\azaid\Documents\ShareX\Screenshots\2025-05\stremio_R31D2Oto2b.mp4</string>
@@ -17,9 +20,6 @@
         <string>https://www.youtube.com/watch?v=dcHe5Fl3MF8|DE Zoomcamp 5.1.1 - Introduction to Batch processing</string>
         <string>https://www.youtube.com/watch?v=-zpVha7bw5A|Data Engineering Zoomcamp 2023</string>
         <string>https://www.youtube.com/watch?v=ueVy2N54lyc|DE Zoomcamp 4.3.1 -  Build the First dbt Models</string>
-        <string>https://www.youtube.com/watch?v=HOYy_jmzUSg|The Great Tesla Debate | Lemonade Stand 🍋</string>
-        <string>https://www.youtube.com/watch?v=qX8KBFL0jjI|Enable Wake on LAN | Quick Windows Guide + Fixes!</string>
-        <string>https://www.youtube.com/watch?v=gsKuETFJr54|DE Zoomcamp 4.1.2 - What is dbt?</string>
     </RecentFiles>
     <WindowLocation>
         <X>0</X>
