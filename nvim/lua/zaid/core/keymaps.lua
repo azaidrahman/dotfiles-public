@@ -69,6 +69,10 @@ vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>") -- go to next
 vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>") -- go to pre
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>") -- open current tab in new tab
 
+-- buffer stuff
+vim.keymap.set("n", "<S-l>", ":bnext<CR>", { noremap = true, silent = true, desc = "Move to next buffer" })
+vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { noremap = true, silent = true, desc = "Move to previous buffer" })
+
 -- split management
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 -- split window vertically
