@@ -2,7 +2,7 @@ local Config = require('config')
 
 require('utils.backdrops')
    -- :set_focus('#000000')
-   -- :set_images_dir(require('wezterm').home_dir .. '/Pictures/Wallpapers/')
+   -- :set_images_dir(require('wezterm').home_dir .. '/Pictures/wezterm')
    :set_images()
    :random()
 
