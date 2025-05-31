@@ -33,9 +33,9 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
 -- Enable folding ( setup in nvim-ufo )
-vim.o.foldenable = true     -- Enable folding by default
+vim.o.foldenable = true -- Enable folding by default
 vim.o.foldmethod = "manual" -- Default fold method (change as needed)
-vim.o.foldlevel = 99        -- Open most folds by default
+vim.o.foldlevel = 99 -- Open most folds by default
 vim.o.foldcolumn = "0"
 
 -- backspace
@@ -47,7 +47,7 @@ vim.opt.splitbelow = true --split horizontal window to the bottom
 
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
 
 -- clipboard
 vim.opt.clipboard:append("unnamedplus") --use system clipboard as default
