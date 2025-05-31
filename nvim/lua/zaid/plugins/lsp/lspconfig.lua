@@ -76,7 +76,7 @@ return {
 			signs = {
 				text = signs, -- Enable signs in the gutter
 			},
-			virtual_text = true, -- Specify Enable virtual text for diagnostics
+			virtual_text = false, -- Specify Enable virtual text for diagnostics
 			underline = true, -- Specify Underline diagnostics
 			update_in_insert = false, -- Keep diagnostics active in insert mode
 		})

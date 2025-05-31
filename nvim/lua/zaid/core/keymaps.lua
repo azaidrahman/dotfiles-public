@@ -15,6 +15,10 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 
+vim.keymap.set("n", "<leader>qq", ":q<CR>", opts)
+vim.keymap.set("n", "<leader>qc", ":q!<CR>", opts)
+vim.keymap.set("n", "<C-s>", ":w<CR>", opts)
+
 -- the how it be paste
 -- vim.keymap.set("x", "<leader>p", [["_dP]])
 
@@ -28,7 +32,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]], opts)
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- ctrl c as escape cuz Im lazy to reach up to the esc key
-vim.keymap.set("i", "<C-c>", "<Esc>")
+-- vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<Esc>", ":nohl<CR>", { desc = "Clear search hl", silent = true })
 -- format without prettier using the built in
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
@@ -68,6 +72,10 @@ vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>") -- close current tab
 vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>") -- go to next
 vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>") -- go to pre
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>") -- open current tab in new tab
+
+-- buffer stuff
+vim.keymap.set("n", "<S-l>", ":bnext<CR>", { noremap = true, silent = true, desc = "Move to next buffer" })
+vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { noremap = true, silent = true, desc = "Move to previous buffer" })
 
 -- split management
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
