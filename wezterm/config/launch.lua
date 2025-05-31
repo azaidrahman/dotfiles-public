@@ -35,4 +35,6 @@ elseif platform.is_linux then
    }
 end
 
+-- options.default_gui_startup_args = { 'connect', 'mux' }
+
 return options
