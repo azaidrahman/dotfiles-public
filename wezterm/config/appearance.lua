@@ -3,6 +3,7 @@ local backdrops = require('utils.backdrops')
 local colors = require('colors.custom')
 
 return {
+   colorcolumn = 0,
    max_fps = 120,
    front_end = 'WebGpu',
    webgpu_power_preference = 'HighPerformance',
