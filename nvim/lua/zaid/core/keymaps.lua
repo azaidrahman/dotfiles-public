@@ -17,7 +17,7 @@ vim.keymap.set("v", ">", ">gv", opts)
 
 vim.keymap.set("n", "<leader>qq", ":q<CR>", opts)
 vim.keymap.set("n", "<leader>qc", ":q!<CR>", opts)
-vim.keymap.set("n", "<C-s>", ":w<CR>", opts)
+vim.keymap.set("n", "<leader>qs", ":w<CR>", opts)
 
 -- the how it be paste
 -- vim.keymap.set("x", "<leader>p", [["_dP]])
