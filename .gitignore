@@ -6,7 +6,7 @@ mpv.net/fonts
 mpv.net/scripts/uosc
 mpv.net/subtitles
 mpv.net/history.txt
-wezterm/backdrops
+# wezterm/backdrops
 nvim/lazy-lock.json
 *.json
 *-archive.*/
