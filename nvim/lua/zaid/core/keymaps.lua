@@ -15,6 +15,10 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 
+vim.keymap.set("n", "<leader>qq", ":q<CR>", opts)
+vim.keymap.set("n", "<leader>qc", ":q!<CR>", opts)
+vim.keymap.set("n", "<C-s>", ":w<CR>", opts)
+
 -- the how it be paste
 -- vim.keymap.set("x", "<leader>p", [["_dP]])
 
@@ -28,7 +32,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]], opts)
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- ctrl c as escape cuz Im lazy to reach up to the esc key
-vim.keymap.set("i", "<C-c>", "<Esc>")
+-- vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<Esc>", ":nohl<CR>", { desc = "Clear search hl", silent = true })
 -- format without prettier using the built in
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
