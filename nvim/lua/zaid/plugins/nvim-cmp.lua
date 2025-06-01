@@ -52,7 +52,7 @@ return {
 
 		luasnip.add_snippets("vue", {
 			s(
-				"vuetest",
+				"!vue",
 				fmt(
 					[[
                     <script setup lang="ts">{}</script>
@@ -297,8 +297,8 @@ return {
 
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
-				["<C-j>"] = cmp.mapping(select_next_item),
-				["<C-k>"] = cmp.mapping(select_prev_item),
+				-- ["<C-j>"] = cmp.mapping(select_next_item),
+				-- ["<C-k>"] = cmp.mapping(select_prev_item),
 				["<C-n>"] = cmp.mapping(select_next_item),
 				["<C-p>"] = cmp.mapping(select_prev_item),
 				["<Down>"] = cmp.mapping(select_next_item),

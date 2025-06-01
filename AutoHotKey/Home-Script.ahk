@@ -129,6 +129,61 @@ ClickLoop:
 !p::Send {Up}
 !b::Send {Left}
 !f::Send {Right}
+
+!o::
+{
+    ; ---------------------------------------------
+    ; 1) Locate the active Explorer window & selection
+    ; ---------------------------------------------
+    selectedPath := ""
+    for window in ComObjCreate("Shell.Application").Windows
+    {
+        if (window.hwnd = WinActive("A"))
+        {
+            selItems := window.Document.SelectedItems
+            break
+        }
+    }
+    if !selItems
+        return
+
+    ; Take the first selected item (file or folder)
+    for item in selItems
+    {
+        selectedPath := item.Path
+        break
+    }
+    if (selectedPath = "")
+        return
+
+	;~ MsgBox, %selectedPath%
+    ; ---------------------------------------------
+    ; 2) Build the NirCmd + WezTerm → Neovim command
+    ; ---------------------------------------------
+    ; Adjust these paths if necessary:
+    ;~ nircmdPath  := "C:\Tools\nircmd\nircmd.exe"
+	;~ nircmdPath = "nircmd"
+    weztermPath := "C:\Program Files\WezTerm\wezterm.exe"
+
+    ; The inner command: wezterm start -- nvim "<selectedPath>"
+    innerCmd := "" """wezterm start -- nvim """ . selectedPath . ""
+
+	;~ MsgBox, %innerCmd%
+
+    ; NirCmd’s “exec hide” will run the inner command with no console window
+    ; Notes:
+    ;   - /NOCONSOLE is not needed because “exec hide” already implies hidden.
+    ;~ cmd := """" . nircmdPath . """ nircmd exec hide """ . innerCmd . """"
+	cmd := "nircmd exec hide """ . innerCmd . """"
+
+	;~ MsgBox, %cmd%
+
+    ; ---------------------------------------------
+    ; 3) Run the hidden launcher
+    ; ---------------------------------------------
+    Run, %cmd%
+    return
+}
 ;~ #IfWinActive ahk_exe zen.exe
 	;~ !n::Send {Down}
 	;~ !p::Send {Up}

@@ -182,6 +182,23 @@ return {
 			capabilities = capabilities,
 		})
 
+		lspconfig.volar.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "typescript", "javascript", "javscriptreact", "typescriptreact", "vue" },
+			settings = {
+				volar = {
+					autoCompleteRefs = true,
+					autoCompleteLinks = true,
+					completion = {
+						tagCasing = "pascal", -- Vuetify uses PascalCase for components
+						useScaffoldSnippets = true, -- auto-import Vuetify components as you type
+					},
+				},
+			},
+			format = { enable = false }, -- disable Volar formatting if using Prettier
+		})
+
 		-- HACK: If using Blink.cmp Configure all LSPs here
 
 		-- ( comment the ones in mason )
