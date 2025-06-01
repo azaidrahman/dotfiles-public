@@ -1,3 +1,4 @@
+-- https://mwop.net/blog/2024-10-21-wezterm-resurrect.html
 -- File: resurrect/config.lua
 -- resurrect.wezterm configuration and settings
 --
@@ -8,17 +9,23 @@
 --
 -- The main wezterm configuration is then responsible for merging the
 -- keybindings with other keybindings, or setting up its own.
-
-local config = {}
+-- local config = {}
 local wezterm = require('wezterm')
+print('im here')
+wezterm.log_info('im here')
 local resurrect = wezterm.plugin.require('https://github.com/MLFlexer/resurrect.wezterm')
+-- local resurrect = wezterm.plugin.require('../../../wezterm.plugins/resurrect')
+-- local resurrect = wezterm.plugin.require('%USERPROFILE%/.config/wezterm.plugins/resurrect/')
+-- local resurrect = wezterm.plugin.require('resurrect')
+-- local workspace_switcher =
+-- wezterm.plugin.require('https://github.com/MLFlexer/smart_workspace_switcher.wezterm')
 
 -- resurrect.wezterm encryption
 -- Uncomment the following to use encryption.
 -- If you do, ensure you have the age tool installed, you have created an
 -- encryption key at ~/.config/age/wezterm-resurrect.txt, and that you supply
 -- the associated public_key below
--- resurrect.set_encryption({
+-- resurrect.set_encryption(h
 --     enable      = true,
 --     method      = "age",
 --     private_key = wezterm.home_dir .. "/.config/age/wezterm-resurrect.txt",
@@ -32,13 +39,13 @@ resurrect.periodic_save({
    save_windows = true,
    save_workspaces = true,
 })
-
+--
 -- Save only 5000 lines per pane
 resurrect.set_max_nlines(5000)
 
 -- Default keybindings
 -- These will need to be merged with the main wezterm keys.
-config.keys = {
+local keybindings = {
    {
       -- Save current and window state
       -- See https://github.com/MLFlexer/resurrect.wezterm for options around
@@ -47,7 +54,7 @@ config.keys = {
       mods = 'LEADER',
       action = wezterm.action_callback(function(win, pane) -- luacheck: ignore 212
          local state = resurrect.workspace_state.get_workspace_state()
-         resurrect.save_state(state)
+         resurrect.state_manager.save_state(state)
          resurrect.window_state.save_window_action()
       end),
    },
@@ -99,6 +106,34 @@ config.keys = {
    },
 }
 
-require('resurrect/events')
+-- M.setup = function()
+--    wezterm.on('augment-command-palette', function(window, pane)
+--       local workspace_state = resurrect.workspace_state
+--       return {
+--          {
+--             brief = 'Window | Workspace: Switch Workspace',
+--             icon = 'md_briefcase_arrow_up_down',
+--             action = workspace_switcher.switch_workspace(),
+--          },
+--          {
+--             brief = 'Window | Workspace: Rename Workspace',
+--             icon = 'md_briefcase_edit',
+--             action = wezterm.action.PromptInputLine({
+--                description = 'Enter new name for workspace',
+--                action = wezterm.action_callback(function(window, pane, line)
+--                   if line then
+--                      wezterm.mux.rename_workspace(wezterm.mux.get_active_workspace(), line)
+--                      resurrect.state_manager.save_state(workspace_state.get_workspace_state())
+--                   end
+--                end),
+--             }),
+--          },
+--       }
+--    end)
+-- end
 
-return config
+local M = {}
+M.keys = keybindings
+-- require('resurrect/events')
+
+return M
