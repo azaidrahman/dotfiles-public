@@ -7,8 +7,8 @@ local mux = wezterm.mux
 local mod = {}
 
 if platform.is_mac then
-   mod.SUPER = 'SUPER'
-   mod.SUPER_REV = 'SUPER|CTRL'
+   mod.SUPER = 'OPT'
+   mod.SUPER_REV = 'SUPER|OPT'
 elseif platform.is_win or platform.is_linux then
    mod.SUPER = 'ALT' -- to not conflict with Windows key shortcuts
    mod.SUPER_REV = 'ALT|CTRL'
@@ -65,10 +65,10 @@ local keys = {
     { key = 'w',          mods = mod.SUPER_REV, action = act.CloseCurrentTab({ confirm = false }) },
 
     -- tabs: navigation
-    { key = '[',          mods = mod.SUPER,     action = act.ActivateTabRelative(-1) },
-    { key = ']',          mods = mod.SUPER,     action = act.ActivateTabRelative(1) },
-    { key = '[',          mods = mod.SUPER_REV, action = act.MoveTabRelative(-1) },
-    { key = ']',          mods = mod.SUPER_REV, action = act.MoveTabRelative(1) },
+    { key = 'p',          mods = mod.SUPER_REV,     action = act.ActivateTabRelative(-1) },
+    { key = 'n',          mods = mod.SUPER_REV,     action = act.ActivateTabRelative(1) },
+    -- { key = 'f',          mods = mod.SUPER_REV, action = act.MoveTabRelative(-1) },
+    -- { key = 'b',          mods = mod.SUPER_REV, action = act.MoveTabRelative(1) },
 
     -- tab: title
     { key = '0',          mods = mod.SUPER,     action = act.EmitEvent('tabs.manual-update-tab-title') },
@@ -148,13 +148,13 @@ local keys = {
             end),
         }),
     },
-    {
-        key = 'b',
-        mods = mod.SUPER,
-        action = wezterm.action_callback(function(window, _pane)
-            backdrops:toggle_focus(window)
-        end)
-    },
+    -- {
+    --     key = 'b',
+    --     mods = mod.SUPER,
+    --     action = wezterm.action_callback(function(window, _pane)
+    --         backdrops:toggle_focus(window)
+    --     end)
+    -- },
 
     -- panes --
     -- panes: split panes
@@ -178,11 +178,11 @@ local keys = {
     { key = 'j',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Down') },
     { key = 'h',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Left') },
     { key = 'l',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Right') },
-    {
-        key = 'p',
-        mods = mod.SUPER_REV,
-        action = act.PaneSelect({ alphabet = '1234567890', mode = 'SwapWithActiveKeepFocus' }),
-    },
+    -- {
+    --     key = 'p',
+    --     mods = mod.SUPER_REV,
+    --     action = act.PaneSelect({ alphabet = '1234567890', mode = 'SwapWithActiveKeepFocus' }),
+    -- },
 
     -- panes: scroll pane
     { key = 'u',        mods = mod.SUPER, action = act.ScrollByLine(-5) },
