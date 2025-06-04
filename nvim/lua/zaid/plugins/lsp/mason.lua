@@ -1,6 +1,11 @@
 return {
 	"williamboman/mason.nvim",
 	lazy = false,
+	opts = {
+		ui = {
+			border = "rounded",
+		},
+	},
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
