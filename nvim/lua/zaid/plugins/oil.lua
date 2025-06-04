@@ -8,7 +8,12 @@ return {
 				signcolumn = "yes:2",
 			},
 			default_file_explorer = true, -- start up nvim with oil instead of netrw
-			columns = {},
+			columns = {
+				"icon",
+				"permissions",
+				"size",
+				"mtime",
+			},
 			keymaps = {
 				["<C-h>"] = false,
 				["<C-c>"] = false, -- prevent from closing Oil as <C-c> is esc key
