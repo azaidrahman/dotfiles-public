@@ -88,7 +88,15 @@ return {
 		-- Setup servers
 		local lspconfig = require("lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
+		local mason_registery = require("mason-registry")
+		local vue_language_server = vim.fn.stdpath("data")
+			.. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+		-- local on_attach = lspconfig.on_attach()
+		-- local on_attach = require("plugins.configs.lspconfig").on_attach
 		local capabilities = cmp_nvim_lsp.default_capabilities()
+		-- local capabilities = require("plugins.configs.lspconfig").capabilities
+		-- local vue_language_server = mason_registery.get_package("vue-language-server"):get_install_path()
+		-- .. "/node_modules/@vue/language-server"
 
 		-- Config lsp servers here
 		-- lua_ls
@@ -138,6 +146,7 @@ return {
 				"javascriptreact",
 				"less",
 				"sass",
+				"vue",
 				"scss",
 				"pug",
 				"typescriptreact",
@@ -163,19 +172,30 @@ return {
 
 		-- ts_ls (replaces tsserver)
 		lspconfig.ts_ls.setup({
+			-- on_attach = on_attach,
 			capabilities = capabilities,
-			root_dir = function(fname)
-				local util = lspconfig.util
-				return not util.root_pattern("deno.json", "deno.jsonc")(fname)
-					and util.root_pattern("tsconfig.json", "package.json", "jsconfig.json", ".git")(fname)
-			end,
-			single_file_support = false,
+			-- root_dir = function(fname)
+			-- 	local util = lspconfig.util
+			-- 	return not util.root_pattern("deno.json", "deno.jsonc")(fname)
+			-- 		and util.root_pattern("tsconfig.json", "package.json", "jsconfig.json", ".git")(fname)
+			-- end,
+			-- single_file_support = false,
 			init_options = {
-				preferences = {
-					includeCompletionsWithSnippetText = true,
-					includeCompletionsForImportStatements = true,
+				plugins = {
+					{
+						name = "@vue/typescript-plugin",
+						location = vue_language_server,
+						-- TODO: MAKE THIS AVAILABLE FOR PC AS WELL
+						-- location = "/usr/local/lib/node_modules/@vue/language-server",
+						languages = { "vue" },
+					},
 				},
+				-- preferences = {
+				-- 	includeCompletionsWithSnippetText = true,
+				-- 	includeCompletionsForImportStatements = true,
+				-- },
 			},
+			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 		})
 
 		lspconfig.pyright.setup({
@@ -183,20 +203,20 @@ return {
 		})
 
 		lspconfig.volar.setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-			filetypes = { "typescript", "javascript", "javscriptreact", "typescriptreact", "vue" },
-			settings = {
-				volar = {
-					autoCompleteRefs = true,
-					autoCompleteLinks = true,
-					completion = {
-						tagCasing = "pascal", -- Vuetify uses PascalCase for components
-						useScaffoldSnippets = true, -- auto-import Vuetify components as you type
-					},
-				},
-			},
-			format = { enable = false }, -- disable Volar formatting if using Prettier
+			-- 	-- on_attach = on_attach,
+			-- 	capabilities = capabilities,
+			-- 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+			-- 	settings = {
+			-- 		volar = {
+			-- 			autoCompleteRefs = true,
+			-- 			autoCompleteLinks = true,
+			-- 			completion = {
+			-- 				tagCasing = "pascal", -- Vuetify uses PascalCase for components
+			-- 				useScaffoldSnippets = true, -- auto-import Vuetify components as you type
+			-- 			},
+			-- 		},
+			-- 		format = { enable = false }, -- disable Volar formatting if using Prettier
+			-- 	},
 		})
 
 		-- HACK: If using Blink.cmp Configure all LSPs here
