@@ -41,7 +41,7 @@ return {
 			-- servers for mason to install
 			ensure_installed = {
 				"lua_ls",
-				-- "ts_ls", currently using a ts plugin
+				"ts_ls", -- currently using a ts plugin
 				"html",
 				"cssls",
 				"tailwindcss",
