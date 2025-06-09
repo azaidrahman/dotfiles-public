@@ -7,6 +7,7 @@ end
 
 return {
 	"yetone/avante.nvim",
+	enabled = false,
 	event = "VeryLazy",
 	version = false, -- Never set this value to "*"! Never!
 	opts = {
@@ -24,6 +25,17 @@ return {
 					--reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
 				},
 			},
+			get_file_path = function()
+				local path = vim.api.nvim_buf_get_name(0)
+				-- fallback if empty
+				if path == "" then
+					return vim.fn.expand("%:p")
+				end
+				return path
+			end,
+		},
+		behaviour = {
+			use_cwd_as_project_root = true,
 		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
