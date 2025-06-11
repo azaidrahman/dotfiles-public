@@ -10,6 +10,8 @@ return {
 
             nvchadcolorizer.setup({
                 user_default_options = {
+                rgb_fn = true,
+                RRGGBBAA = true,
                     tailwind = true,
                 },
                 filetypes = { "html", "css", "javascript", "typescript", "jsx", "tsx", "vue", "svelte" },

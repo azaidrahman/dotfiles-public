@@ -37,6 +37,7 @@ return {
 				-- markdown = { "prettier" },
 				graphql = { "prettier" },
 				liquid = { "prettier" },
+				vue = { "prettier" },
 				lua = { "stylua" },
 				python = { "black" },
 				markdown = { "prettier" },
@@ -58,6 +59,7 @@ return {
 				"4",
 				"--use-tabs",
 				"false",
+                "--single-attribute-per-line",
 			},
 		}
 		conform.formatters.shfmt = {
