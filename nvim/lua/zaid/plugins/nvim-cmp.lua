@@ -313,47 +313,47 @@ return {
 					end
 				end, { "i", "s" }),
 
-				["<CR>"] = cmp.mapping(function(fallback)
-					-- if cmp.visible() then
-					-- 	if luasnip.expandable() then
-					-- 		luasnip.expand()
-					-- 	else
-					-- 		local entry = cmp.get_selected_entry()
-					-- 		confirm(entry)
-					-- 	end
-					-- else
-					-- 	fallback()
-					if cmp.visible() then
-						if luasnip.expandable() then
-							-- Expand snippet if trigger is right here
-							luasnip.expand()
-							return
-						end
-
-						-- If you’re already inside a jumpable placeholder, jump to next
-						if luasnip.jumpable(1) then
-							luasnip.jump(1)
-							return
-						end
-
-						-- Otherwise, confirm the selected completion entry
-						local entry = cmp.get_selected_entry()
-						if entry then
-							confirm(entry)
-							return
-						end
-
-						-- If no completion is visible and no snippet jumpable, do normal Enter
-						fallback()
-					else
-						-- When cmp is not open, but you’re still in a snippet – jump if possible
-						if luasnip.jumpable(1) then
-							luasnip.jump(1)
-						else
-							fallback()
-						end
-					end -- end
-				end, { "i", "s" }),
+				-- ["<CR>"] = cmp.mapping(function(fallback)
+				-- 	-- if cmp.visible() then
+				-- 	-- 	if luasnip.expandable() then
+				-- 	-- 		luasnip.expand()
+				-- 	-- 	else
+				-- 	-- 		local entry = cmp.get_selected_entry()
+				-- 	-- 		confirm(entry)
+				-- 	-- 	end
+				-- 	-- else
+				-- 	-- 	fallback()
+				-- 	if cmp.visible() then
+				-- 		if luasnip.expandable() then
+				-- 			-- Expand snippet if trigger is right here
+				-- 			luasnip.expand()
+				-- 			return
+				-- 		end
+				--
+				-- 		-- If you’re already inside a jumpable placeholder, jump to next
+				-- 		if luasnip.jumpable(1) then
+				-- 			luasnip.jump(1)
+				-- 			return
+				-- 		end
+				--
+				-- 		-- Otherwise, confirm the selected completion entry
+				-- 		local entry = cmp.get_selected_entry()
+				-- 		if entry then
+				-- 			confirm(entry)
+				-- 			return
+				-- 		end
+				--
+				-- 		-- If no completion is visible and no snippet jumpable, do normal Enter
+				-- 		fallback()
+				-- 	else
+				-- 		-- When cmp is not open, but you’re still in a snippet – jump if possible
+				-- 		if luasnip.jumpable(1) then
+				-- 			luasnip.jump(1)
+				-- 		else
+				-- 			fallback()
+				-- 		end
+				-- 	end -- end
+				-- end, { "i", "s" }),
 
 				["<S-Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
