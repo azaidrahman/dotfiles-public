@@ -16,6 +16,9 @@ return {
 			python = { "pylint" },
 		}
 
+        lint.linters.pylint.cmd = 'python'
+        lint.linters.pylint.args = {'-m','pylint','-f','json','$FILENAME'}
+
 		eslint.args = {
 			"--no-warn-ignored",
 			"--format",
@@ -27,6 +30,7 @@ return {
 			end,
 		}
 
+        -- set running linters on buffer save
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
 			group = lint_augroup,
 			callback = function()

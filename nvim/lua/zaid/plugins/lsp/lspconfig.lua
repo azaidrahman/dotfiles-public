@@ -200,6 +200,11 @@ return {
 
 		lspconfig.pyright.setup({
 			capabilities = capabilities,
+            settings = {
+                python = {
+                    pythonPath = vim.fn.exepath("python3")
+                },
+            },
 		})
 
 		lspconfig.volar.setup({
