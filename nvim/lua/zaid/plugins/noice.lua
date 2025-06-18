@@ -12,7 +12,7 @@ return {
 
             noice.setup({
 				cmdline = {
-					enabled = false,
+					enabled = true,
 					view = "cmdline_popup",
 					format = {
 						cmdline = { pattern = "", icon = "󱐌 :", lang = "vim" },
