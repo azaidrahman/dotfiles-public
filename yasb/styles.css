@@ -2,7 +2,7 @@
   font-size: 12px;
   color: #bec8e7;
   font-weight: 500;
-  font-family: "JetBrainsMono NFP";
+  font-family: 'Roboto';
   margin: 0;
   padding: 0;
 }
@@ -52,7 +52,7 @@
   margin-bottom: 10px;
   color: rgba(191, 202, 219, 0.726);
   font-weight: 600;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .power-menu-widget .label {
   color: #f38ba8;
@@ -69,7 +69,7 @@
   height: 120px;
   border-radius: 8px;
   background-color: rgb(41, 42, 58);
-  font-family: "SegoeUI";
+  font-family: 'SegoeUI';
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.1);
   margin: 8px;
@@ -83,7 +83,7 @@
   font-size: 16px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.95);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .power-menu-popup .button .icon {
   font-size: 48px;
@@ -197,9 +197,15 @@
 .komorebi-active-layout .label {
   color: #a4ce0c;
 }
-.komorebi-workspaces .ws-btn .label {} /*Style for label text in buttons.*/
-.komorebi-workspaces .ws-btn.active .label {} /*Style for label text in active buttons.*/
-.komorebi-workspaces .ws-btn .icon {} /*Style for icon in buttons.*/
-.komorebi-workspaces .ws-btn .icon-1 {} /*Style for icon in first button.*/
-.komorebi-workspaces .ws-btn .icon-2 {} /*Style for icon in second button.*/
-.komorebi-workspaces .ws-btn.active .icon {} /*Style for icon in active buttons.*/
+.komorebi-workspaces .ws-btn .label {
+} /*Style for label text in buttons.*/
+.komorebi-workspaces .ws-btn.active .label {
+} /*Style for label text in active buttons.*/
+.komorebi-workspaces .ws-btn .icon {
+} /*Style for icon in buttons.*/
+.komorebi-workspaces .ws-btn .icon-1 {
+} /*Style for icon in first button.*/
+.komorebi-workspaces .ws-btn .icon-2 {
+} /*Style for icon in second button.*/
+.komorebi-workspaces .ws-btn.active .icon {
+} /*Style for icon in active buttons.*/
