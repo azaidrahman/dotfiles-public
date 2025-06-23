@@ -1,3 +1,4 @@
+-- https://github.com/linux-cultist/venv-selector.nvim
 return {
 	"linux-cultist/venv-selector.nvim",
 	dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
