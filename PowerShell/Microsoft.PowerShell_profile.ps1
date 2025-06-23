@@ -46,5 +46,7 @@ Set-PSReadLineOption -PredictionViewStyle ListView
 
 Set-PSReadLineKeyHandler -Key Ctrl+p -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key Ctrl+n -Function HistorySearchForward
+
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
 #}
 
