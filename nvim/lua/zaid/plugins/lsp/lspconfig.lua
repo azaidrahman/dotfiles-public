@@ -202,6 +202,8 @@ return {
 			capabilities = capabilities,
             settings = {
                 python = {
+                    venvPath = ".",
+                    venv = ".venv",
                     pythonPath = vim.fn.exepath("python3")
                 },
             },
