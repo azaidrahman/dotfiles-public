@@ -16,6 +16,16 @@ end
 
 -- stylua: ignore
 local keys = {
+    -- changing CMD-y to Ctrl-y on nvim
+    platform.is_mac and {
+        key = 'y',
+        mods = 'CMD',
+        action = act.SendKey {
+          key = 'y',
+          mods = 'CTRL',
+        },
+      } or nil,
+
     -- misc/useful --
     { key = 'F1', mods = 'NONE', action = 'ActivateCopyMode' },
     { key = 'F2', mods = 'NONE', action = act.ActivateCommandPalette },
