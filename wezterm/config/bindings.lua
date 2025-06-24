@@ -17,6 +17,7 @@ end
 -- stylua: ignore
 local keys = {
     -- changing CMD-y to Ctrl-y on nvim
+    -- https://wezterm.org/config/lua/keyassignment/SendKey.html
     platform.is_mac and {
         key = 'y',
         mods = 'CMD',
