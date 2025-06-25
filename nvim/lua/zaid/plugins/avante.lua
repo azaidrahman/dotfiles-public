@@ -7,7 +7,7 @@ end
 
 return {
 	"yetone/avante.nvim",
-	enabled = false,
+	enabled = true,
 	event = "VeryLazy",
 	version = false, -- Never set this value to "*"! Never!
 	opts = {
@@ -24,6 +24,12 @@ return {
 					max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
 					--reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
 				},
+			},
+			deepseek = {
+				__inherited_from = "openai",
+				api_key_name = "DEEPSEEK_API_KEY",
+				endpoint = "https://api.deepseek.com",
+				model = "deepseek-coder",
 			},
 			get_file_path = function()
 				local path = vim.api.nvim_buf_get_name(0)

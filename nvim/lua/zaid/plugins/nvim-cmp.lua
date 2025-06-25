@@ -267,6 +267,7 @@ return {
 			},
 			-- autocompletion sources
 			sources = cmp.config.sources({
+                { name = "supermaven"},
 				{ name = "luasnip" }, -- snippets
 				{ name = "lazydev" },
 				{ name = "nvim_lsp" },
@@ -290,6 +291,7 @@ return {
 				--     smart_bs()
 				-- end, { 'i', 's' }),
 
+                ["<C-space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
 				["<C-d>"] = cmp.mapping(function()
 					cmp.close_docs()
