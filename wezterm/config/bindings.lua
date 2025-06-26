@@ -5,28 +5,30 @@ local act = wezterm.action
 local mux = wezterm.mux
 
 local mod = {}
+local mac_keys = {}
+local keys = {}
 
 if platform.is_mac then
    mod.SUPER = 'OPT'
    mod.SUPER_REV = 'SUPER|OPT'
+   -- https://wezterm.org/config/lua/keyassignment/SendKey.html
+   mac_keys = {
+      { key = 'y', mods = 'CMD', action = act.SendKey({ key = 'y', mods = 'CTRL' }) },
+      -- { key = 'f', mods = 'CMD', action = act.Search { CaseInSensitiveString = '' } },
+      -- { key = 'v', mods = 'CMD', action = act.PasteFrom 'Clipboard' },
+      -- { key = 'c', mods = 'CMD', action = act.CopyTo 'Clipboard' },
+   }
 elseif platform.is_win or platform.is_linux then
    mod.SUPER = 'ALT' -- to not conflict with Windows key shortcuts
    mod.SUPER_REV = 'ALT|CTRL'
 end
 
+for k,v in pairs(mac_keys) do
+   table.insert(keys, v)
+end
 -- stylua: ignore
-local keys = {
+keys = {
     -- changing CMD-y to Ctrl-y on nvim
-    -- https://wezterm.org/config/lua/keyassignment/SendKey.html
-    platform.is_mac and {
-        key = 'y',
-        mods = 'CMD',
-        action = act.SendKey {
-          key = 'y',
-          mods = 'CTRL',
-        },
-      } or nil,
-
     -- misc/useful --
     { key = 'F1', mods = 'NONE', action = 'ActivateCopyMode' },
     { key = 'F2', mods = 'NONE', action = act.ActivateCommandPalette },
