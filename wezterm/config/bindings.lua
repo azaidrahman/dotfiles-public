@@ -13,7 +13,10 @@ if platform.is_mac then
    mod.SUPER_REV = 'SUPER|OPT'
    -- https://wezterm.org/config/lua/keyassignment/SendKey.html
    mac_keys = {
+      -- changing CMD-y to Ctrl-y on nvim
       { key = 'y', mods = 'CMD', action = act.SendKey({ key = 'y', mods = 'CTRL' }) },
+      { key = 'd', mods = 'CMD', action = act.SendKey({ key = 'd', mods = 'CTRL' }) },
+      { key = 'u', mods = 'CMD', action = act.SendKey({ key = 'u', mods = 'CTRL' }) },
       -- { key = 'f', mods = 'CMD', action = act.Search { CaseInSensitiveString = '' } },
       -- { key = 'v', mods = 'CMD', action = act.PasteFrom 'Clipboard' },
       -- { key = 'c', mods = 'CMD', action = act.CopyTo 'Clipboard' },
@@ -23,12 +26,8 @@ elseif platform.is_win or platform.is_linux then
    mod.SUPER_REV = 'ALT|CTRL'
 end
 
-for k,v in pairs(mac_keys) do
-   table.insert(keys, v)
-end
 -- stylua: ignore
 keys = {
-    -- changing CMD-y to Ctrl-y on nvim
     -- misc/useful --
     { key = 'F1', mods = 'NONE', action = 'ActivateCopyMode' },
     { key = 'F2', mods = 'NONE', action = act.ActivateCommandPalette },
@@ -240,6 +239,10 @@ keys = {
   },
 }
 
+for k, v in pairs(mac_keys) do
+   table.insert(keys, v)
+end
+
 -- stylua: ignore
 local key_tables = {
     resize_font = {
@@ -267,6 +270,7 @@ local mouse_bindings = {
       action = act.OpenLinkAtMouseCursor,
    },
 }
+print(keys)
 
 return {
    disable_default_key_bindings = true,
