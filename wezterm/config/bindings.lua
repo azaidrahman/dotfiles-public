@@ -11,12 +11,19 @@ local keys = {}
 if platform.is_mac then
    mod.SUPER = 'OPT'
    mod.SUPER_REV = 'SUPER|OPT'
+   mod.REV_SHIFT = 'CMD|SHIFT'
    -- https://wezterm.org/config/lua/keyassignment/SendKey.html
    mac_keys = {
       -- changing CMD-y to Ctrl-y on nvim
+      -- { key = 'SUPER', action = act.SendKey({ key = 'Control', mods = 'CTRL' }) },
       { key = 'y', mods = 'CMD', action = act.SendKey({ key = 'y', mods = 'CTRL' }) },
       { key = 'd', mods = 'CMD', action = act.SendKey({ key = 'd', mods = 'CTRL' }) },
       { key = 'u', mods = 'CMD', action = act.SendKey({ key = 'u', mods = 'CTRL' }) },
+      { key = 'c', mods = 'CMD', action = act.SendKey({ key = 'c', mods = 'CTRL' }) },
+      { key = 'l', mods = 'CMD', action = act.SendKey({ key = 'l', mods = 'CTRL' }) },
+      { key = 'e', mods = 'CMD', action = act.SendKey({ key = 'e', mods = 'CTRL' }) },
+      { key = 'o', mods = 'CMD', action = act.SendKey({ key = 'o', mods = 'CTRL' }) },
+      { key = 's', mods = 'CMD', action = act.SendKey({ key = 's', mods = 'CTRL' }) },
       -- { key = 'f', mods = 'CMD', action = act.Search { CaseInSensitiveString = '' } },
       -- { key = 'v', mods = 'CMD', action = act.PasteFrom 'Clipboard' },
       -- { key = 'c', mods = 'CMD', action = act.CopyTo 'Clipboard' },
@@ -24,6 +31,7 @@ if platform.is_mac then
 elseif platform.is_win or platform.is_linux then
    mod.SUPER = 'ALT' -- to not conflict with Windows key shortcuts
    mod.SUPER_REV = 'ALT|CTRL'
+   mod.REV_SHIFT = 'CTRL|SHIFT'
 end
 
 -- stylua: ignore
@@ -67,8 +75,8 @@ keys = {
     { key = 'Backspace',  mods = mod.SUPER,     action = act.SendString '\u{15}' },
 
     -- copy/paste --
-    { key = 'c',          mods = 'CTRL|SHIFT',  action = act.CopyTo('Clipboard') },
-    { key = 'v',          mods = 'CTRL|SHIFT',  action = act.PasteFrom('Clipboard') },
+    { key = 'c',          mods = mod.REV_SHIFT,  action = act.CopyTo('Clipboard') },
+    { key = 'v',          mods = mod.REV_SHIFT,  action = act.PasteFrom('Clipboard') },
 
     -- tabs --
     -- tabs: spawn+close
