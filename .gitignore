@@ -25,3 +25,4 @@ mpv.net/settings.xml
 *.plugins/
 *.env
 .DS_Store
+zsh/.zshenv
