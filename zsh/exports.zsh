@@ -14,6 +14,14 @@ else
     export EDITOR="nvim"
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+## COMMON VARIABLES
+export EDITOR="nvim"
+export VISUAL="nvim"
+export SUDO_EDITOR="nvim"
+export FCEDITOR="nvim"
+export TERMINAL="wezterm"
+# export BROWSER="app.zen-browser.zen"
+#
+export FZ_DEFAULT_COMMAND='rg —files —hidden -g !.git/'

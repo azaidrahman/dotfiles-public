@@ -10,6 +10,9 @@ fi
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
+autoload -Uz compinit bashcompinit
+compinit
+bashcompinit
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
@@ -19,4 +22,3 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
 
-eval "$(zoxide init bash)"
