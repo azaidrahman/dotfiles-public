@@ -8,6 +8,7 @@ zinit light undg/zsh-nvm-lazy-load
 
 # Add in plugins
 # zinit snippet OMZP::sudo
+# added this lib thing for git_current_branch and other functions
 zinit snippet OMZ::lib/git.zsh
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::git
